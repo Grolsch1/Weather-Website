@@ -138,7 +138,7 @@ if (searchInput && predictionsContainer) {
       //Ignore Outdated Requests
       if (thisRequest !== requestNumber) return;
 
-      if (!location.length) {
+      if (!locations.length) {
         showMessage("No matching locations found.");
         return;
       }
@@ -195,7 +195,7 @@ if (searchInput && predictionsContainer) {
   /* Search Button */
   searchButton.addEventListener("click", () => {
     clearTimeout(searchTimer);
-    const query = searchInput.ariaValueMax.trim();
+    const query = searchInput.value.trim();
     performSearch(query);
   });
 
@@ -208,7 +208,7 @@ if (searchInput && predictionsContainer) {
 
       //Use exsisting results if availble
       if (currentLocations.length) {
-        selectLocation(CurrentLocations[0]);
+        selectLocation(currentLocations[0]);
         return;
       }
 
@@ -232,7 +232,12 @@ if (searchInput && predictionsContainer) {
     const predictions = [
       ...predictionsContainer.querySelectorAll(".prediction-item"),
     ];
+
+    // Stop if there are no predictions
+    if (predictions.length === 0) return;
+
     const currentIndex = predictions.indexOf(document.activeElement);
+
     if (event.key === "ArrowDown") {
       event.preventDefault();
 
@@ -241,6 +246,7 @@ if (searchInput && predictionsContainer) {
 
     if (event.key === "ArrowUp") {
       event.preventDefault();
+
       if (currentIndex <= 0) {
         searchInput.focus();
       } else {
