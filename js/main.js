@@ -3,3 +3,5 @@ import { createFooter } from "./footer.js";
 
 createNavigation();
 createFooter();
+
+import "./home.js";
