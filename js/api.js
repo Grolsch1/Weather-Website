@@ -1,4 +1,4 @@
-const API_KEY = "07c2208bd508641a135d13e435c67a5d";
+const API_KEY = "527eeffff8755af3fedc7f83ec7dd73a";
 
 const BASE_URL = "https://api.openweathermap.org";
 
@@ -18,7 +18,7 @@ export async function searchLocations(query) {
   // Retrieve the response
   const data = await response.json();
 
-  // Display the actual API response
+  // Actual API response - mainly for testing
   console.log("OpenWeather response:", {
     status: response.status,
     data: data,
