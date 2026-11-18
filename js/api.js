@@ -6,23 +6,11 @@ const BASE_URL = "https://api.openweathermap.org";
 
 export async function searchLocations(query) {
   const url = new URL("https://api.openweathermap.org/geo/1.0/direct");
-
   url.searchParams.set("q", query);
   url.searchParams.set("limit", "5");
   url.searchParams.set("appid", API_KEY);
-
-  console.log("Searching OpenWeather for:", query);
-
   const response = await fetch(url);
-
-  // Retrieve the response
   const data = await response.json();
-
-  // Actual API response - mainly for testing
-  console.log("OpenWeather response:", {
-    status: response.status,
-    data: data,
-  });
 
   // Check for HTTP errors
   if (!response.ok) {

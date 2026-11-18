@@ -204,10 +204,6 @@ if (searchInput && predictionsContainer) {
 
     const query = searchInput.value.trim();
 
-    predictionsContainer.innerHTML = "";
-    searchInput.setAttribute("aria-expanded", "false");
-    currentLocations = [];
-
     if (query.length < 2) {
       showMessage("");
       return;

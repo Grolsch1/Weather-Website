@@ -1,6 +1,5 @@
 /* GSAP Curve Swipe Page Transitions */
 const TRANSITION_KEY = "weather-window-transition";
-
 let isNavigating = false;
 
 /* Check Accessibility Preferences */
@@ -9,10 +8,8 @@ function prefersReducedMotion() {
 }
 
 /* Navigate with Curve Swipe */
-
 export function navigateWithTransition(destination) {
   if (isNavigating) return;
-
   const url = new URL(destination, window.location.href);
 
   // Normal navigation when animations are unavailable
@@ -20,22 +17,13 @@ export function navigateWithTransition(destination) {
     window.location.assign(url.href);
     return;
   }
-
   const overlay = document.getElementById("page-transition");
-
   if (!overlay) {
     window.location.assign(url.href);
     return;
   }
-
   isNavigating = true;
-
   document.documentElement.classList.add("transition-active");
-
-  // Start overlay below the viewport
-  window.gsap.set(overlay, {
-    yPercent: 100,
-  });
 
   // Animate upward until fully covered
   window.gsap.fromTo(
@@ -47,7 +35,6 @@ export function navigateWithTransition(destination) {
       yPercent: 0,
       duration: 0.8,
       ease: "power3.inOut",
-
       onComplete: () => {
         try {
           sessionStorage.setItem(
@@ -57,7 +44,6 @@ export function navigateWithTransition(destination) {
         } catch (error) {
           // Continue if storage is unavailable
         }
-
         window.location.assign(url.href);
       },
     },

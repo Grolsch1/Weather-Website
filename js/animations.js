@@ -1,23 +1,13 @@
 /* Prediction Animation */
 export function animatePrediction(element, expanded) {
-  if (!window.gsap) {
-    //CSS transition acts as fallback
-    return;
-  }
+  if (!window.gsap) return;
 
-  if (expanded) {
-    window.gsap.to(element, {
-      scale: 1.2,
-      duration: 0.35,
-      ease: "power2.out",
-    });
-  } else {
-    window.gsap.to(element, {
-      scale: 1,
-      duration: 0.35,
-      ease: "power2.out",
-    });
-  }
+  window.gsap.to(element, {
+    scale: expanded ? 1.2 : 1,
+    duration: 0.35,
+    ease: "power2.out",
+    overwrite: "auto",
+  });
 }
 
 /* Navigation Hover Animation */
@@ -38,7 +28,7 @@ export function initNavigationAnimations() {
       y: -6,
       scale: 1.1,
       duration: 0.4,
-      ease: "black.out(1.5)",
+      ease: "back.out(1.5)",
       easeReverse: "power2.in",
       paused: true,
     });
