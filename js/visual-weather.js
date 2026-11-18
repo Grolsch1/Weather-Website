@@ -394,6 +394,7 @@ if (document.body.dataset.page === "visual-weather") {
     weatherWindow.style.setProperty("--humidity-haze", humidityHaze);
 
     /* Display basic weather info */
+    //Using the icons from OpenWeather as they are already responsive to weather
     weatherWindow.innerHTML = `
     ${getCloudMarkup(clouds)}
     ${getPrecipitationMarkup(weather)}
