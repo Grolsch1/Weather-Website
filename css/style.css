@@ -94,6 +94,14 @@ p {
   background-color: var(--colour-primary);
 }
 
+/* GSAP Navigation Animations */
+.nav-links a,
+.footer-links a,
+.footer-credit a {
+  display: inline-block;
+  transform-origin: center;
+}
+
 /* Main Content */
 main {
   flex: 1;
@@ -1201,5 +1209,39 @@ body[data-page="about"] .about-content {
   }
   .search-steps {
     padding-left: 1.25rem;
+  }
+}
+
+/* GSAP Curve Swipe Page Transition */
+#page-transition {
+  position: fixed;
+  /* Extend beyond the viewport */
+  top: -30dvh;
+  left: 0;
+  width: 100%;
+  height: 160dvh;
+  z-index: 9999;
+  pointer-events: none;
+  /* Start completely below the screen */
+  transform: translateY(100%);
+}
+
+/* Curved SVG Shape */
+.transition-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: #086ab3;
+}
+
+/* Arriving Page */
+html.transition-arriving #page-transition {
+  transform: translateY(0);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  #page-transition {
+    display: none;
   }
 }

@@ -1,6 +1,6 @@
 import { searchLocations, getCurrentWeather, getCountryName } from "./api.js";
-
 import { animatePrediction } from "./animations.js";
+import { navigateWithTransition } from "./page-transitions.js";
 
 /* HTML Elements */
 
@@ -41,7 +41,7 @@ if (searchInput && predictionsContainer) {
       state: location.state || "",
     });
 
-    window.location.href = `visual-weather.html?${params.toString()}`;
+    navigateWithTransition(`visual-weather.html?${params.toString()}`);
   }
 
   /* Generate location predictions */
