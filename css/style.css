@@ -986,3 +986,220 @@ body[data-page="visual-weather"] main.lightning-flash::before {
     transform: translate(-10px, 110vh);
   }
 }
+
+/* About Page */
+
+/* Main Layout */
+body[data-page="about"] .about-content {
+  width: min(90%, 1000px);
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+/* Introduction */
+.about-intro {
+  margin-bottom: 4rem;
+}
+.about-intro h1 {
+  margin-bottom: 1.5rem;
+}
+.about-intro p {
+  max-width: 750px;
+  font-size: 1.1rem;
+}
+
+/* About Sections */
+.about-section {
+  margin-bottom: 4rem;
+}
+.about-section h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+}
+.about-section > p {
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+/* Instruction Panels */
+.about-panel {
+  padding: 2rem;
+  background-color: var(--colour-navigation);
+  border: 1px solid var(--colour-primary);
+  border-radius: 12px;
+}
+.about-panel h3 {
+  margin-bottom: 1rem;
+}
+
+/* Search Instructions */
+.search-steps {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.search-steps li {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+.search-steps li::marker {
+  color: var(--colour-heading);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+/* Tips */
+.about-tip {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--colour-hover);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Navigation Link */
+.about-link {
+  display: inline-block;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--colour-primary);
+  color: var(--colour-heading);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+.about-link:hover {
+  background-color: var(--colour-hover);
+}
+
+/* Visual Weather Guide */
+
+.weather-guide {
+  padding: 1.75rem;
+  margin-bottom: 1rem;
+  background-color: var(--colour-navigation);
+  border: 1px solid var(--colour-primary);
+  border-radius: 12px;
+}
+.weather-guide h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+.weather-guide p {
+  max-width: 800px;
+}
+
+/* Temperature Colour Palette */
+.temperature-guide {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Individual Colour Swatches */
+.temperature-swatch {
+  min-height: 95px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Existing Weather Window Temperature Palette */
+.temp-minus10 {
+  background-color: #086ab3;
+  color: #ffffff;
+}
+.temp-0 {
+  background-color: #19b3b8;
+  color: #030e24;
+}
+.temp-10 {
+  background-color: #a3c3ce;
+  color: #030e24;
+}
+.temp-20 {
+  background-color: #f6c157;
+  color: #030e24;
+}
+.temp-30 {
+  background-color: #f39406;
+  color: #030e24;
+}
+.temp-40 {
+  background-color: #8f0012;
+  color: #ffffff;
+}
+/* Supporting Text */
+.guide-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Command Testing */
+/* About - Console Command Panels */
+.demo-command {
+  padding: 1.5rem;
+  margin-top: 1rem;
+  background-color: var(--colour-navigation);
+  border: 1px solid var(--colour-primary);
+  border-radius: 12px;
+}
+.demo-command h4 {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-heading);
+  color: var(--colour-heading);
+}
+.demo-command p {
+  margin-bottom: 1rem;
+}
+.demo-command code {
+  display: block;
+  padding: 1rem;
+  background-color: var(--colour-hover);
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+/* Responsivity for About Page  */
+@media (max-width: 768px) {
+  .temperature-guide {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .about-panel {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body[data-page="about"] .about-content {
+    padding: 3rem 0;
+  }
+  .about-intro,
+  .about-section {
+    margin-bottom: 3rem;
+  }
+  .weather-guide {
+    padding: 1.25rem;
+  }
+  .temperature-guide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .temperature-swatch {
+    min-height: 75px;
+  }
+  .search-steps {
+    padding-left: 1.25rem;
+  }
+}

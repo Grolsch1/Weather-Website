@@ -21,27 +21,266 @@
 
     <main>
       <section class="about-content">
-        <h1>About Weather Window</h1>
+        <div class="about-intro">
+          <h1>About Weather Window</h1>
+          <p>
+            Weather Window explores how weather can be communicated through
+            visual experiences rather than numerical information alone.
+          </p>
+        </div>
 
-        <p>
-          Weather Window explores how weather can be communicated through visual
-          experiences rather than numerical information alone.
-        </p>
+        <!-- Section 1: Search Explaination -->
+        <section class="about-section" id="how-to-search">
+          <h2>How to Search</h2>
+          <p>
+            Do you want to see what the weather of a specific location looks
+            like? Weather Window helps you see weather conditions from around
+            the world.
+          </p>
+          <div class="about-panel">
+            <ol class="search-steps">
+              <li>
+                <strong> Enter a loctaion.</strong>
+                On the Home page, type in the name of a city or loaction into
+                the search bar. If you are looking for a specific Suburb rather
+                than a specific city, please seperate the search using Commas.
+                For Example: "Linden, Gauteng, South Africa".
+              </li>
+              <li>
+                <strong>Choose a suggestion.</strong>
+                Matching locations will appear as suggestions below the search
+                bar. Select the location that you want to look at.
+              </li>
+              <li>
+                <strong>Explore the weather.</strong>
+                You will then be taken to the Visual Weather Page, where current
+                weather conditions for the location you searched for appear.
+              </li>
+            </ol>
+            <p class="about-tip">
+              Tip: If multiple locations have the same name, check the
+              country/region in the suggestions before selecting a location.
+            </p>
+            <a class="about-link" href="index.html"> Explore Now </a>
+          </div>
+        </section>
 
-        <h2>About the creator</h2>
+        <!-- Section 2: Weather Visualisations -->
+        <section class="about-section" id="weather-visuals">
+          <h2>What Weather Visuals does this site use?</h2>
+          <p>
+            On the Visual Weather Page, current weather conditions are showcased
+            visually. Each visual element represents a different atmospheric
+            condition.
+          </p>
 
-        <p>
-          Hi, my name is Christopher Beckenstrater. I love geography and the
-          weather, but I have always had a problem with weather apps and
-          websites. I find that many people, myself included, struggle to
-          comprehend the vast amounts of weather information that these services
-          give you. Therefore, I created Weather Window with the goal of
-          communicating weather to users visually.
-        </p>
+          <!-- Temperature Colours -->
+          <div class="weather-guide">
+            <h3>Temperature Colours</h3>
+            <p>
+              In the Weather Window, the circle in the center of the page, the
+              colour changes according to the current temperature. Cold
+              temperatures are represented as blues, warmer temperature are
+              represented as yellows/reds.
+            </p>
+            <div class="temperature-guide">
+              <div class="temperature-swatch temp-minus10">
+                <span>-10°C</span>
+              </div>
+              <div class="temperature-swatch temp-0">
+                <span>0°C</span>
+              </div>
+              <div class="temperature-swatch temp-10">
+                <span>10°C</span>
+              </div>
+              <div class="temperature-swatch temp-20">
+                <span>20°C</span>
+              </div>
+              <div class="temperature-swatch temp-30">
+                <span>30°C</span>
+              </div>
+              <div class="temperature-swatch temp-40">
+                <span>40°C</span>
+              </div>
+            </div>
+            <p class="guide-note">
+              These colours gradually transition between one another if the
+              current temperature is lies between the values. The also get a
+              slight colour tint based on the Humidty & Atmospheric Haze, which
+              will be explained shortly.
+            </p>
+          </div>
 
-        <h2>Weather data and references</h2>
+          <!-- Cloud Cover -->
+          <div class="weather-guide">
+            <h3>Cloud Cover</h3>
+            <p>
+              Clouds appear inside of the Weahter Window depending on the areas
+              cloud coverage.
+            </p>
+          </div>
 
-        <p>Weather information provided by OpenWeather.</p>
+          <!-- Wind -->
+          <div class="weather-guide">
+            <h3>Wind Movement</h3>
+            <p>
+              Depending on the areas wind speed, the clouds are moved in the
+              direction that the wind is travelling. Fast winds cause more
+              movement in the clouds.
+            </p>
+          </div>
+
+          <!-- Precipitation -->
+          <div class="weather-guide">
+            <h3>Precipitation</h3>
+            <p>
+              Rain, drizzle and Snow are represented by animated particles.
+              However, the ability of this effect is heavily impacted by the API
+              coverage. Some smaller areas, lack current coverage and won't show
+              these effects even if they are currently experiencing
+              rain/drizzle/snow.
+            </p>
+          </div>
+
+          <!-- Atmospheric Haze -->
+          <div class="weather-guide">
+            <h3>Humidity and Atmospheric Haze</h3>
+            <p>
+              Humidity is used as an Atmospheric Haze overlay in the Weather
+              Window. When an areas Humidtity is high, it creates a stronger
+              mist overlay which will make the temperature colours dimmer.
+            </p>
+          </div>
+
+          <!-- Time of Day-->
+          <div class="weather-guide">
+            <h3>Time of Day</h3>
+            <p>
+              The surrounding background of the page shifts colour to match the
+              time of day. Sunrise, Sunset, Daytime and Nighttime each have
+              their own colours. These colours also merge together as the time
+              changes.
+            </p>
+          </div>
+
+          <!-- Thunderstorms -->
+          <div class="weather-guide">
+            <h3>Thunderstorms</h3>
+            <p>
+              During Thunderstorms, brief flashes of lightning will appear on
+              the background of the page.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 3: Console Commands for testing -->
+        <section class="about-section" id="weather-testing">
+          <h2>Want to test Weather Effects?</h2>
+          <p>
+            While this website usually displays live weather conditions from
+            OpenWeather, I understand that being able to test specific weather
+            conditions anytime is great for developing and testing. So below are
+            some commands you can use to test various conditions.
+          </p>
+
+          <div id="demo-command-reference">
+            <h3>Available Console Commands</h3>
+            <p>
+              Copy a command below and paste it into your browser's Console
+              while viewing a location on the Visual Weather page.
+            </p>
+
+            <!-- Lightning -->
+            <div class="demo-command">
+              <h4>Lightning</h4>
+              <p>
+                Trigger a lightning flash on the background surrounding the
+                weather window.
+              </p>
+              <code>
+                const m = document.querySelector('main');
+                m.classList.remove('lightning-flash'); void m.offsetWidth;
+                m.classList.add('lightning-flash')
+              </code>
+            </div>
+
+            <!-- High Temperature -->
+            <div class="demo-command">
+              <h4>High Temperature</h4>
+              <p>
+                Change the sky to the hottest temperature colour in the palette.
+              </p>
+              <code>
+                document.querySelector('#weather-window').style.setProperty('--sky-colour','#8f0012')
+              </code>
+            </div>
+
+            <!-- High Humidity -->
+            <div class="demo-command">
+              <h4>High Humidity</h4>
+              <p>Apply the strongest atmospheric haze effect.</p>
+              <code>
+                document.querySelector('#weather-window').style.setProperty('--humidity-haze',
+                '0.22')
+              </code>
+            </div>
+
+            <!-- Cloud Cover -->
+            <div class="demo-command">
+              <h4>Heavy Cloud Cover</h4>
+              <p>Apply heavy cloud cover to an area</p>
+              <code>
+                document.querySelector('#weather-window').style.setProperty('--cloud-dim',
+                '0.38')
+              </code>
+            </div>
+
+            <!-- High Wind -->
+            <div class="demo-command">
+              <h4>High Wind</h4>
+              <p>Apply a strong Wind</p>
+              <code>
+                document.querySelector('#weather-window').style.setProperty('--wind-duration',
+                '5s')
+              </code>
+            </div>
+          </div>
+        </section>
+
+        <!-- Creator Information -->
+        <section class="about-section" id="about-creator">
+          <h2>About the creator</h2>
+
+          <p>
+            Hi, my name is Christopher Beckenstrater. I love geography and the
+            weather, but I have always had a problem with weather apps and
+            websites.
+          </p>
+          <p>
+            I find that many people, myself included, struggle to comprehend the
+            vast amounts of weather information that these services give you.
+            Therefore, I created Weather Window with the goal of communicating
+            weather to users visually.
+          </p>
+        </section>
+
+        <!-- Data Attribution -->
+        <section class="about-section" id="weather-data">
+          <h2>Weather Data and Technologies</h2>
+          <p>
+            Weather information provided by
+            <a
+              href="https://openweathermap.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >OpenWeather</a
+            >, using its Current Weather and Geocoding APIs.
+          </p>
+          <p>
+            This website is built using HTML, CSS, and Javascript. GSAP Library
+            is used for certain animations.
+          </p>
+        </section>
       </section>
     </main>
 
