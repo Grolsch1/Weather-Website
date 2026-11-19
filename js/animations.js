@@ -3,7 +3,7 @@ export function animatePrediction(element, expanded) {
   if (!window.gsap) return;
 
   window.gsap.to(element, {
-    scale: expanded ? 1.2 : 1,
+    scale: expanded ? 1.1 : 1,
     duration: 0.35,
     ease: "power2.out",
     overwrite: "auto",

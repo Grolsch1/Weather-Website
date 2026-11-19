@@ -5,10 +5,8 @@ export function createFooter() {
 
   footer.innerHTML = `
         <div class="footer-content">
-
-            <p>
-                WEATHER WINDOW
-            </p>
+            
+            <p></p>
 
             <div class="footer-links">
 
@@ -34,3 +32,4 @@ export function createFooter() {
         </div>
     `;
 }
+// blank paragraph is intentional
