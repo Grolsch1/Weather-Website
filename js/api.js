@@ -1,3 +1,5 @@
+//My API key is not really safe here and people can access it easily. I know that this is a problem, but I am also assuming that for this project it's fine as the website is not meant for full release
+// -> at least, that is how I assumed this project was functioning. :)
 const API_KEY = "527eeffff8755af3fedc7f83ec7dd73a";
 
 const BASE_URL = "https://api.openweathermap.org";
